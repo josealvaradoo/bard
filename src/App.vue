@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import WelcomeText from '@/components/WelcomeText.vue'
 import SmokeEffect from '@/components/SmokeEffect.vue'
-import BardCharapter from '@/components/BardCharapter.vue'
+import BardCharacter from '@/components/BardCharacter.vue'
 import ArrowDown from '@/components/ArrowDown.vue'
 </script>
 
@@ -11,7 +11,9 @@ import ArrowDown from '@/components/ArrowDown.vue'
       <div class="container">
         <WelcomeText />
       </div>
-      <BardCharapter />
+      <div class="character">
+        <BardCharacter />
+      </div>
     </section>
     <ArrowDown />
     <SmokeEffect />
@@ -46,7 +48,15 @@ import ArrowDown from '@/components/ArrowDown.vue'
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 10rem;
+  left: 0rem;
+  animation: moveInFromLeft 4s ease-in-out forwards;
+}
+.character {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  right: 0rem;
+  animation: moveInFromRight 4s ease-in-out forwards;
 }
 @keyframes fadeIn {
   0% {
@@ -56,6 +66,22 @@ import ArrowDown from '@/components/ArrowDown.vue'
   100% {
     filter: blur(0px);
     opacity: 1;
+  }
+}
+@keyframes moveInFromRight {
+  0% {
+    right: 0rem;
+  }
+  100% {
+    right: 15rem;
+  }
+}
+@keyframes moveInFromLeft {
+  0% {
+    left: 0rem;
+  }
+  100% {
+    left: 15rem;
   }
 }
 </style>

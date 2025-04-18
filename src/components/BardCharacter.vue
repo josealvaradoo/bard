@@ -80,13 +80,13 @@ function onWindowResize() {
 </script>
 
 <template>
-  <div ref="bard" class="canvas-container"></div>
+  <div ref="bard" class="bard"></div>
 </template>
 
 <style scoped>
 .bard {
   position: relative;
-  width: 30vw;
+  width: 100%;
   height: 100%;
   z-index: 1;
   top: 0rem;
