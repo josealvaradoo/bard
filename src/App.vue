@@ -3,41 +3,56 @@ import WelcomeText from '@/components/WelcomeText.vue'
 import SmokeEffect from '@/components/SmokeEffect.vue'
 import BardCharacter from '@/components/BardCharacter.vue'
 import ArrowDown from '@/components/ArrowDown.vue'
+import SkillSection from '@/components/SkillSection.vue'
+import SynergyChamps from '@/components/SynergyChamps.vue'
+import FooterBox from '@/components/FooterBox.vue'
 </script>
 
 <template>
   <main class="main">
     <section class="section">
-      <div class="container">
-        <WelcomeText />
+      <div class="welcome">
+        <div class="container">
+          <WelcomeText />
+        </div>
+        <div class="character">
+          <BardCharacter />
+        </div>
       </div>
-      <div class="character">
-        <BardCharacter />
-      </div>
+      <ArrowDown />
     </section>
-    <ArrowDown />
+    <SkillSection />
     <SmokeEffect />
+    <SynergyChamps />
   </main>
+  <FooterBox />
 </template>
 
 <style scoped>
-.main {
+.main,
+.section {
   width: 100%;
-  height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
 }
+
 .section {
+  height: 100%;
+  min-height: 100vh;
+}
+
+.welcome {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 50vh;
+  height: 50vh;
   width: 100%;
 }
-.section,
+.welcome,
 .arrow {
   top: 4rem;
   filter: blur(10px);
