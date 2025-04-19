@@ -2,7 +2,6 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 
 const smoke = ref<HTMLCanvasElement | null>(null)
-const FILEPATH = '/src/assets/images/smoke.webp'
 
 onMounted(() => {
   generateSmoke()
@@ -32,7 +31,7 @@ function generateSmoke() {
 
   // Carga la textura de humo
   const smokeImage = new Image()
-  smokeImage.src = FILEPATH
+  smokeImage.src = new URL('../assets/images/smoke.webp', import.meta.url).href
 
   class Particle {
     x: number
