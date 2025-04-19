@@ -1,13 +1,36 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
 const pVideo = new URL('../assets/vids/p.mp4', import.meta.url).href
 const qVideo = new URL('../assets/vids/q.mp4', import.meta.url).href
 const wVideo = new URL('../assets/vids/w.mp4', import.meta.url).href
 const eVideo = new URL('../assets/vids/e.mp4', import.meta.url).href
 const rVideo = new URL('../assets/vids/r.mp4', import.meta.url).href
+
+const h2 = ref<HTMLElement | null>(null)
+const isVisible = ref(false)
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          isVisible.value = true
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.5 },
+  )
+
+  if (h2.value) {
+    observer.observe(h2.value)
+  }
+})
 </script>
 
 <template>
-  <h2>Skills</h2>
+  <h2 ref="h2" :class="{ animate: isVisible }">Skills</h2>
   <section id="abilities" class="section">
     <div class="card">
       <div class="text">
@@ -92,9 +115,17 @@ const rVideo = new URL('../assets/vids/r.mp4', import.meta.url).href
 .section {
   width: 90%;
   max-width: 900px;
-  margin-bottom: 5rem;
   margin-top: 4rem;
 }
+
+h2 {
+  opacity: 0;
+}
+
+h2.animate {
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
 .card {
   display: flex;
   justify-content: space-between;

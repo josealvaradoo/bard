@@ -21,9 +21,9 @@ import FooterBox from '@/components/FooterBox.vue'
       </div>
       <ArrowDown />
     </section>
+    <SynergyChamps />
     <SkillSection />
     <SmokeEffect />
-    <SynergyChamps />
   </main>
   <FooterBox />
 </template>
@@ -56,7 +56,7 @@ import FooterBox from '@/components/FooterBox.vue'
 .arrow {
   top: 4rem;
   filter: blur(10px);
-  animation: fadeIn 4s ease-in-out forwards;
+  animation: fadeIn 3s ease-in-out forwards;
 }
 .container {
   position: relative;
@@ -73,22 +73,32 @@ import FooterBox from '@/components/FooterBox.vue'
   right: 0rem;
   animation: moveInFromRight 4s ease-in-out forwards;
 }
-@keyframes fadeIn {
-  0% {
-    filter: blur(10px);
-    opacity: 0.2;
+
+@media screen and (min-width: 1400px) {
+  @keyframes moveInFromRight {
+    0% {
+      right: 0rem;
+    }
+    100% {
+      right: 15rem;
+    }
   }
-  100% {
-    filter: blur(0px);
-    opacity: 1;
+  @keyframes moveInFromLeft {
+    0% {
+      left: 0rem;
+    }
+    100% {
+      left: 15rem;
+    }
   }
 }
+
 @keyframes moveInFromRight {
   0% {
     right: 0rem;
   }
   100% {
-    right: 15rem;
+    right: 10rem;
   }
 }
 @keyframes moveInFromLeft {
@@ -96,7 +106,7 @@ import FooterBox from '@/components/FooterBox.vue'
     left: 0rem;
   }
   100% {
-    left: 15rem;
+    left: 10rem;
   }
 }
 </style>
