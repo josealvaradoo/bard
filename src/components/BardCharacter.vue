@@ -37,7 +37,7 @@ function setupThreeJsBard() {
 
   // Model loading
   const loader = new GLTFLoader()
-  loader.load('src/assets/3d/bard2.glb', (gltf) => {
+  loader.load('../assets/3d/bard.glb', (gltf) => {
     scene.add(gltf.scene)
     mixer = new THREE.AnimationMixer(gltf.scene)
     mixer.clipAction(gltf.animations[ANIMATION]).play()
