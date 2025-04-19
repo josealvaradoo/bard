@@ -6,10 +6,12 @@ import ArrowDown from '@/components/ArrowDown.vue'
 import SkillSection from '@/components/SkillSection.vue'
 import SynergyChamps from '@/components/SynergyChamps.vue'
 import FooterBox from '@/components/FooterBox.vue'
+import SoundWaves from '@/components/SoundWaves.vue'
 </script>
 
 <template>
   <main class="main">
+    <SoundWaves />
     <section class="section">
       <div class="welcome">
         <div class="container">
