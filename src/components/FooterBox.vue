@@ -2,7 +2,7 @@
 
 <template>
   <footer>
-    <a href="https://github.com/josealvarado/bard" target="_blank">
+    <a href="https://github.com/josealvaradoo/bard" target="_blank">
       <img src="../assets/images/github.png" alt="Github" />
     </a>
     <a href="https://www.leagueofgraphs.com/es/summoner/lan/Frieck-LATAM" target="_blank">
