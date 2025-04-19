@@ -74,7 +74,24 @@ import FooterBox from '@/components/FooterBox.vue'
   animation: moveInFromRight 4s ease-in-out forwards;
 }
 
-@media screen and (min-width: 1400px) {
+@keyframes moveInFromRight {
+  0% {
+    right: 0rem;
+  }
+  100% {
+    right: 10rem;
+  }
+}
+@keyframes moveInFromLeft {
+  0% {
+    left: 0rem;
+  }
+  100% {
+    left: 10rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
   @keyframes moveInFromRight {
     0% {
       right: 0rem;
@@ -90,23 +107,6 @@ import FooterBox from '@/components/FooterBox.vue'
     100% {
       left: 15rem;
     }
-  }
-}
-
-@keyframes moveInFromRight {
-  0% {
-    right: 0rem;
-  }
-  100% {
-    right: 10rem;
-  }
-}
-@keyframes moveInFromLeft {
-  0% {
-    left: 0rem;
-  }
-  100% {
-    left: 10rem;
   }
 }
 </style>
