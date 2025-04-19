@@ -49,7 +49,10 @@ onMounted(() => {
     </div>
     <div class="card">
       <div class="text">
-        <h3>[Q] Cadenas Cósmicas</h3>
+        <div class="title">
+          <img src="../assets/images/q.webp" alt="Q" class="key" />
+          <h3>Cadenas Cósmicas</h3>
+        </div>
         <p>
           Con mi Q stuneo a campeones siempre y cuando choquen con algo detrás, ya sea un minion,
           una pared, estructura u otro campeón. El stun dura aproximadamanete 1-2 segundos, así que
@@ -64,7 +67,10 @@ onMounted(() => {
     </div>
     <div class="card">
       <div class="text">
-        <h3>[W] Santuario del Protector</h3>
+        <div class="title">
+          <img src="../assets/images/w.webp" alt="W" class="key" />
+          <h3>Santuario del Protector</h3>
+        </div>
         <p>
           Mi W cura. Las iré poniendo en el camino para tener sustain en línea. Además de curarte te
           da velocidad de movimiento, así que trata de usarlas cuando necesites velocidad (por
@@ -80,7 +86,10 @@ onMounted(() => {
     </div>
     <div class="card">
       <div class="text">
-        <h3>[E] Periplo Mágico</h3>
+        <div class="title">
+          <img src="../assets/images/e.webp" alt="E" class="key" />
+          <h3>Periplo Mágico</h3>
+        </div>
         <p>
           Este es mi portal. El equipo viajará más rápido que el enemigo. Lo usaré mucho en conjunto
           con el jungla para hacer gankeos sorpresas tanto en bot como en jungla. También abriré
@@ -95,7 +104,10 @@ onMounted(() => {
     </div>
     <div class="card">
       <div class="text">
-        <h3>[R] Destino Maleable</h3>
+        <div class="title">
+          <img src="../assets/images/r.webp" alt="R" class="key" />
+          <h3>Destino Maleable</h3>
+        </div>
         <p>
           Mi R es un Zonyhas en área y afecta a todos por igual. Trataré siempre de darle solo al
           enemigo, así que trata de evadirla cuando veas la marca. Mientras mas lejos la lance de
@@ -139,7 +151,6 @@ h2.animate {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
-    margin-bottom: 1rem;
   }
 
   .text,
@@ -150,6 +161,22 @@ h2.animate {
   .text {
     line-height: 1.5;
     font-size: 1.1rem;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .key {
+    width: 2.5rem;
   }
 
   &:nth-child(even) {
